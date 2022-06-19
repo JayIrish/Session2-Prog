@@ -8,12 +8,12 @@ public class Vin {
 		int nbVin;
 		double ttlPrix;
 		int Couleur = 1;
-		public static CreeVin() {
-			
-		}
+		
 		
 		
 
 	}
-
+public static void CreeVin() {
+			
+		}
 }
