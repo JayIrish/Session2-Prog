@@ -33,9 +33,9 @@ public class TestVin {
 				result = new JTextArea();
 				result.append("Voici les "+ Vin.nbVin +" vins\n");
 				result.append("Le prix total des vins est de "+ Vin.getTtlPrix() +"$\n");
-				result.append(vin1.toString());
-				result.append(vin2.toString());
-				result.append(vin3.toString());
+				result.append("\t" + vin1.toString());
+				result.append("\t" + vin2.toString());
+				result.append("\t" + vin3.toString());
 				result.append("\n");
 				step1();
 				step2();
@@ -44,10 +44,10 @@ public class TestVin {
 				Vin vin4 = new Vin("Venoum", "France", 19.99);
 				result.append("Voici les "+ Vin.nbVin +" vins\n");
 				result.append("Le prix total des vins est de "+ Vin.getTtlPrix() +"$\n");
-				result.append(vin1.toString());
-				result.append(vin2.toString());
-				result.append(vin3.toString());
-				result.append(vin4.toString());
+				result.append("\t" + vin1.toString());
+				result.append("\t" + vin2.toString());
+				result.append("\t" + vin3.toString());
+				result.append("\t" + vin4.toString());
 				JOptionPane.showMessageDialog(null ,result, "Résultas obtenu", JOptionPane.PLAIN_MESSAGE);
 			}
 		
