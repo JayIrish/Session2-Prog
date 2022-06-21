@@ -1,4 +1,3 @@
-import java.io.*;
 import javax.swing.*;
 import java.awt.Font;
 public class ExempleTableaux2 {
@@ -17,16 +16,16 @@ public class ExempleTableaux2 {
 
 		JTextArea sortie = new JTextArea(10, 30);
 		
-		//Lire des données des ventes
+		//Lire des donnï¿½es des ventes
 		while(continuer=='O'){
 			nom=JOptionPane.showInputDialog(null, "Entrer le nom",
-					"Écran de saisie du nom", JOptionPane.PLAIN_MESSAGE);
+					"ï¿½cran de saisie du nom", JOptionPane.PLAIN_MESSAGE);
 
-			qte=Integer.parseInt(JOptionPane.showInputDialog(null, "Entrer la quantité",
-					"Écran de saisie de la quantité", JOptionPane.PLAIN_MESSAGE));
+			qte=Integer.parseInt(JOptionPane.showInputDialog(null, "Entrer la quantitï¿½",
+					"ï¿½cran de saisie de la quantitï¿½", JOptionPane.PLAIN_MESSAGE));
 			
 			prix=Double.parseDouble(JOptionPane.showInputDialog(null, "Entrer le prix",
-					"Écran de saisie du prix", JOptionPane.PLAIN_MESSAGE));
+					"ï¿½cran de saisie du prix", JOptionPane.PLAIN_MESSAGE));
 			
 		    
 		   tabNoms[i]=nom;
@@ -36,7 +35,7 @@ public class ExempleTableaux2 {
 		   	++i;
 		   	
 		    continuer=JOptionPane.showInputDialog(null, "Traiter un autre client (O/N) ?",
-					"Écran de continuation", JOptionPane.PLAIN_MESSAGE).toUpperCase().charAt(0);
+					"ï¿½cran de continuation", JOptionPane.PLAIN_MESSAGE).toUpperCase().charAt(0);
 		}
 		
 		nbClientsTraites=i;
@@ -46,11 +45,11 @@ public class ExempleTableaux2 {
 		 }
 
 		
-		//Afficher les résultats
+		//Afficher les rï¿½sultats
 		sortie.setFont(new Font("Comic Sans MS", Font.BOLD + Font.ITALIC, 14));
 		sortie.append("\nNOM\t\tMONTANT");
 	     
-	   //Placer les résultats dans le JTextArea sortie
+	   //Placer les rï¿½sultats dans le JTextArea sortie
 		for(i=0;i<nbClientsTraites;i++){
 			sortie.append("\n\n"+tabNoms[i]+"\t\t"+String.format("%.2f",tabMontants[i])+"$");
 		}
