@@ -5,29 +5,40 @@ public class Vin {
 		private String origine;
 		private double prix;
 		private static double ttlPrix;
-		public static int nbVin;
+		private static int nbVin;
+		
+		final int ROUGE = 1;
+		final int BLANC = 2;
+		final int ROSE = 3;
+		
+		
          
 
 	Vin(String nom, int type, String origine, double prix){
-		this.nom = nom;
-		this.type = type;
-		this.origine = origine;
-		this.prix = prix;
+		this.setNom(nom);
+		this.setType(type);
+		this.setOrigine(origine);
+		this.setPrix(prix);
 		ttlPrix += this.prix;
 		nbVin++;
 		}
 	
 	Vin(String nom, String origine, double prix){
-		this.nom = nom;
-		this.type = 1;
-		this.origine = origine;
-		this.prix = prix;
+		this.setNom(nom);
+		this.setType(type);
+		this.setOrigine(origine);
+		this.setPrix(prix);
 		ttlPrix += this.prix;
 		nbVin++;
+	}
+	
+	public static int getNbVin() {
+		return Vin.nbVin;
 	}
 	public static double getTtlPrix() {
 		return Vin.ttlPrix;
 	}
+	
 	public String getNom() {
 		return this.nom;
 	}
@@ -63,16 +74,19 @@ public class Vin {
 		this.prix = newPrix;
 	}
 	
-	public String toString() {
-		if(this.type == 1) {
-			return this.nom +" est un vin"+ " rouge" +" de "+ this.origine +" au prix de "+ this.prix+"$\n";
-		}else if(this.type == 2) {
-			return this.nom +" est un vin"+ " blanc" +" de "+ this.origine +" au prix de "+ this.prix+"$\n";
-	}else if(this.type == 3) {
-		return this.nom +" est un vin"+ " rosé" +" de "+ this.origine +" au prix de "+ this.prix+"$\n";
+	private String couleur() {
+		if(this.type == ROUGE) {
+			return "rouge";
+		}else if(this.type == BLANC) {
+			return "blanc";
+	}else if(this.type == ROSE) {
+		return "rose";
 	}else {
 		return "Une erreure s'est produite sur la couleur du Vin\n";
 	}
+	}
+	public String toString() {
+		return this.nom +" est un vin"+ couleur() +" de "+ this.origine +" au prix de "+ this.prix+"$\n";
 	
 	}
 }
