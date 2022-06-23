@@ -1,4 +1,3 @@
-import java.io.*;
 import javax.swing.*;
 public class ExempleTableaux {
 
@@ -16,16 +15,16 @@ public class ExempleTableaux {
 
 		JTextArea sortie = new JTextArea(10, 30);
 		
-		//Lire des données des ventes
+		//Lire des donnï¿½es des ventes
 		while(continuer=='O'){
 			nom=JOptionPane.showInputDialog(null, "Entrer le nom",
-					"Écran de saisie du nom", JOptionPane.PLAIN_MESSAGE);
+					"ï¿½cran de saisie du nom", JOptionPane.PLAIN_MESSAGE);
 
-			qte=Integer.parseInt(JOptionPane.showInputDialog(null, "Entrer la quantité",
-					"Écran de saisie de la quantité", JOptionPane.PLAIN_MESSAGE));
+			qte=Integer.parseInt(JOptionPane.showInputDialog(null, "Entrer la quantitï¿½",
+					"ï¿½cran de saisie de la quantitï¿½", JOptionPane.PLAIN_MESSAGE));
 			
 			prix=Double.parseDouble(JOptionPane.showInputDialog(null, "Entrer le prix",
-					"Écran de saisie du prix", JOptionPane.PLAIN_MESSAGE));
+					"ï¿½cran de saisie du prix", JOptionPane.PLAIN_MESSAGE));
 			
 		    
 		   tabNoms[i]=nom;
@@ -35,7 +34,7 @@ public class ExempleTableaux {
 		    ++i;
 
 		    continuer=JOptionPane.showInputDialog(null, "Traiter un autre client (O/N) ?",
-					"Écran de continuation", JOptionPane.PLAIN_MESSAGE).toUpperCase().charAt(0);
+					"ï¿½cran de continuation", JOptionPane.PLAIN_MESSAGE).toUpperCase().charAt(0);
 		}
 		
 		nbClientsTraites=i;
@@ -45,7 +44,7 @@ public class ExempleTableaux {
 		 }
 
 		
-		//Afficher les résultats
+		//Afficher les rï¿½sultats
 		int taille=tabMontants.length;
 		rep+="\nNOM\t\tMONTANT";
 		for(i=0;i<nbClientsTraites;i++){
@@ -54,7 +53,7 @@ public class ExempleTableaux {
 		
 		rep+="\n\nTOTAL = "+String.format("%.2f",total)+"$";
 		
-		//Placer les résultats dans le JTextArea sortie
+		//Placer les rï¿½sultats dans le JTextArea sortie
 		sortie.setText(rep);
 		
 		//Placer le JTextArea dans le JOptionPane.showMessageDialog

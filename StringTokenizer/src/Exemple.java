@@ -1,4 +1,3 @@
-import java.io.*;
 import java.util.*;
 
 public class Exemple {
@@ -14,7 +13,7 @@ public class Exemple {
 		
 		System.out.println("NOM = "+str.nextToken());
 		System.out.println("PROFESSION = "+str.nextToken());
-		System.out.println("ÂGE = "+str.nextToken());
+		System.out.println("ï¿½GE = "+str.nextToken());
 		System.out.println("PAYS = "+str.nextToken());
 	}
 	
@@ -26,7 +25,7 @@ public class Exemple {
 		}*/
 		System.out.println("NOM = "+tab[0]);
 		System.out.println("PROFESSION = "+tab[1]);
-		System.out.println("ÂGE = "+tab[2]);
+		System.out.println("ï¿½GE = "+tab[2]);
 		System.out.println("PAYS = "+tab[3]);
 	}
 	
