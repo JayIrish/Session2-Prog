@@ -1,3 +1,19 @@
+/*Tes fonction, lorsque tu veuc comparer des String tu ne peux pas utiliser ==, les String sont des objets et avec == 
+ * il compare les adresses et non pas le contenu. Faudra utiliser par exemple dans ton Oprion B : 
+ * if(radio.getMake().tuUpperCase().equals(make.upperCase())
+
+Donc utiliser la mÃ©thode equals de la classe String, dont celle-ci est dans un pdf dans LEA. T'aurais pu utiliser aussi sans passer 
+par une conversion de case :
+if(radio.getMake().equalsIgnoreCase(make)
+
+Pour l'Option E il fallait Ã©crire Ã  la ligne 119 listeRadios.get(pos) et non pas set(pos). Tu veux obtenir l'objet Ã  la position pos,
+ donc get et modifier cet objet par le setMp3.
+
+}else {
+listeRadios.set(pos).setMp3(1);
+}
+ */
+
 import java.awt.Font;
 import java.io.*;
 import java.util.ArrayList;
@@ -23,14 +39,14 @@ public class GestionRadio {
 		output = new JTextArea();
 		output.setFont(new Font("monospace", Font.PLAIN, 12));
 		output.append("\t\tLISTE DES RADIOS\n\n");
-		output.append("MARQUE\tMODÈLE\t CD   CASSETTE   MP3 \tPRIX\n");
+		output.append("MARQUE\tMODï¿½LE\t CD   CASSETTE   MP3 \tPRIX\n");
 	}
 	
 	public static void showHeaderMarque(){
 		outputMarque = new JTextArea();
 		outputMarque.setFont(new Font("monospace", Font.PLAIN, 12));
 		outputMarque.append("\t\tLISTE DES RADIOS\n\n");
-		outputMarque.append("MARQUE\tMODÈLE\t CD   CASSETTE   MP3 \tPRIX\n");
+		outputMarque.append("MARQUE\tMODï¿½LE\t CD   CASSETTE   MP3 \tPRIX\n");
 	}
 	
 	// A)
@@ -47,7 +63,7 @@ public class GestionRadio {
 		outputMarque = new JTextArea();
 		String make = (JOptionPane.showInputDialog(null, "Entrez la marque", "LISTER DES RADIOS PAR MARQUE", JOptionPane.PLAIN_MESSAGE));
 		listeRadios.forEach((radio) -> {
-			if(radio.getMake() == make) {
+			if(radio.getMake().equalsIgnoreCase(make)) {
 			outputMarque.append(radio.toString());
 			}else {;}
 		});
@@ -92,13 +108,13 @@ public class GestionRadio {
 	
 	public static void ajouterRadio(){
 		String make = JOptionPane.showInputDialog(null, "Entrez la marque", "AJOUTER UNE RADIO", JOptionPane.PLAIN_MESSAGE);
-		String model = JOptionPane.showInputDialog(null, "Entrez le modèle", "AJOUTER UNE RADIO", JOptionPane.PLAIN_MESSAGE);
+		String model = JOptionPane.showInputDialog(null, "Entrez le modï¿½le", "AJOUTER UNE RADIO", JOptionPane.PLAIN_MESSAGE);
 		int cd = Integer.parseInt(JOptionPane.showInputDialog
-				(null, "Entrez '1' si il y a fonctionalité CD, sinon entrez '0'.", "AJOUTER UNE RADIO", JOptionPane.PLAIN_MESSAGE));
+				(null, "Entrez '1' si il y a fonctionalitï¿½ CD, sinon entrez '0'.", "AJOUTER UNE RADIO", JOptionPane.PLAIN_MESSAGE));
 		int cassette = Integer.parseInt(JOptionPane.showInputDialog
-				(null, "Entrez '1' si il y a fonctionalité cassette, sinon entrez '0'.", "AJOUTER UNE RADIO", JOptionPane.PLAIN_MESSAGE));
+				(null, "Entrez '1' si il y a fonctionalitï¿½ cassette, sinon entrez '0'.", "AJOUTER UNE RADIO", JOptionPane.PLAIN_MESSAGE));
 		int mp3 = Integer.parseInt(JOptionPane.showInputDialog
-				(null, "Entrez '1' si il y a fonctionalité  MP3, sinon entrez '0'.", "AJOUTER UNE RADIO", JOptionPane.PLAIN_MESSAGE));
+				(null, "Entrez '1' si il y a fonctionalitï¿½  MP3, sinon entrez '0'.", "AJOUTER UNE RADIO", JOptionPane.PLAIN_MESSAGE));
 		double prix = Double.parseDouble(JOptionPane.showInputDialog
 				(null, "Entrez le prix", "AJOUTER UNE RADIO", JOptionPane.PLAIN_MESSAGE));
 		
@@ -112,12 +128,12 @@ public class GestionRadio {
 		Radio radioTmp = new Radio();
 		radioTmp.setMake("Sony");
 		radioTmp.setModel("WM823");
-		pos = listeRadios.indexOf(radioTmp);// -1 si pas trouvé
+		pos = listeRadios.indexOf(radioTmp);// -1 si pas trouvï¿½
 		if (pos == -1){
 			afficherMessage("La radio est introuvable.");
 			return null;
 		}else {
-			listeRadios.set(pos).setMp3(1);
+			listeRadios.get(pos).setMp3(1);
 		}
 		
 		Radio radioTrouve = listeRadios.get(pos);
@@ -139,12 +155,12 @@ public class GestionRadio {
 				ligne = tmpRadioRead.readLine();
 				}
 		} catch (FileNotFoundException e) {
-			System.out.println("Fichier introuvable. Vérifiez le chemin et nom du fichier.");
+			System.out.println("Fichier introuvable. Vï¿½rifiez le chemin et nom du fichier.");
 		}
 		catch (IOException e) {
-			System.out.println("Un problème est arrivé lors de la manipulation du fichier. Vérifiez vos données.");
+			System.out.println("Un problï¿½me est arrivï¿½ lors de la manipulation du fichier. Vï¿½rifiez vos donnï¿½es.");
 		}catch (Exception e) { 
-			System.out.println("Un problème est arrivé lors du chargement du fichier. Contactez l'administrateur.");
+			System.out.println("Un problï¿½me est arrivï¿½ lors du chargement du fichier. Contactez l'administrateur.");
 		}finally {
 			tmpRadioRead.close();
 		}
@@ -173,7 +189,7 @@ public class GestionRadio {
 					chercherRadio();
 					break;
 				case 6 :
-					afficherMessage("Merci d'avoir utilisÃ© notre système");
+					afficherMessage("Merci d'avoir utilisÃ© notre systï¿½me");
 					break;
 				default :
 					afficherMessage("Choix invalide. Les option sont [1-6] !");
