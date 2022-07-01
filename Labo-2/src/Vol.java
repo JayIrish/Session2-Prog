@@ -5,11 +5,11 @@ public class Vol {
 	private Date date;
 	private static int nombreVol;
 	
-	Vol(){
+	Vol(int numVol, String destination, Date date){
 		this.setNumVol(numVol);
 		this.setDestination(destination);
 		this.setDate(date);
-		setTtlVol(nombreVol);;
+		setTtlVol(nombreVol);
 	};
 
 	public void setNumVol(int numVol) {
