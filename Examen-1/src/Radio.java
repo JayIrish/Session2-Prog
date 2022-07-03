@@ -40,7 +40,7 @@ public class Radio {
 	}
 	
 	public int getMp3() {
-		return this.cd;
+		return this.mp3;
 	}
 	
 	public double getPrice() {
