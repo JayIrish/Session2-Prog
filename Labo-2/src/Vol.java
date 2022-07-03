@@ -6,6 +6,10 @@ public class Vol {
 	private int nbPassager;
 	private static int nombreVol;
 	
+	Vol(){
+		
+	}
+	
 	Vol(int numVol, String destination, Date date, int nbPassager){
 		this.setNumVol(numVol);
 		this.setDestination(destination);
