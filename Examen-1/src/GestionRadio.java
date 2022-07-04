@@ -90,10 +90,10 @@ public class GestionRadio {
 		
 		listeRadios.forEach((radio) ->{
 			double ogPrice = radio.getPrice();
-			if(radio.getMake() == "Sony") {
+			if(radio.getMake().equalsIgnoreCase("Sony")) {
 				double newPrice = ogPrice*1.15;
 				radio.setPrice(newPrice);
-			}else if(radio.getMake() == "Koss"){
+			}else if(radio.getMake().equalsIgnoreCase("Koss")){
 				double newPrice = ogPrice + (ogPrice*-0.07);
 				radio.setPrice(newPrice);
 			}
