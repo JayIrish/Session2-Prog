@@ -46,8 +46,11 @@ public class GestionsVols {
 		
 	}
 	
-	public static Vol rechercherVol(Vol vol) {
-		Vol tmpVol = vol;
+	public static Vol rechercherVol(int numVol) {
+		tabVols.forEach(null);
+		Vol tmpVol = new Vol();
+		tmpVol.setNumVol(numVol);
+		
 		return tmpVol;
 	}
 	
