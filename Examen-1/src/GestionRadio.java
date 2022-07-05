@@ -55,20 +55,21 @@ public class GestionRadio {
 		listeRadios.forEach((radio) -> {
 			output.append(radio.toString());
 		});
-		JOptionPane.showMessageDialog(null, output, null, JOptionPane.PLAIN_MESSAGE);
+		JOptionPane.showMessageDialog(null, output, "INVENTAIRE", JOptionPane.PLAIN_MESSAGE);
 	}
 	
 	// B)
 	public static void listerRadiosParMarque() {
 		outputMarque = new JTextArea();
 		String make = (JOptionPane.showInputDialog(null, "Entrez la marque", "LISTER DES RADIOS PAR MARQUE", JOptionPane.PLAIN_MESSAGE));
+		showHeaderMarque();		
 		listeRadios.forEach((radio) -> {
 			if(radio.getMake().equalsIgnoreCase(make)) {
 			outputMarque.append(radio.toString());
 			}else {;}
 		});
-		showHeaderMarque();
-		JOptionPane.showMessageDialog(null, outputMarque, null, JOptionPane.PLAIN_MESSAGE);
+
+		JOptionPane.showMessageDialog(null, outputMarque,"INVENTAIRE " + make, JOptionPane.PLAIN_MESSAGE);
 		}
 	
 		/*
@@ -123,21 +124,22 @@ public class GestionRadio {
 	}
 	
 	// E)
-	public static Object chercherRadio() {
-		int pos;
+	public static void chercherRadio() {
+		
 		Radio radioTmp = new Radio();
 		radioTmp.setMake("Sony");
 		radioTmp.setModel("WM823");
-		pos = listeRadios.indexOf(radioTmp);// -1 si pas trouv�
+		listeRadios.forEach( (radio -> {
+			if(radio.isSame(radioTmp)) {
+			int pos = listeRadios.indexOf(radio);// -1 si pas trouv�
 		if (pos == -1){
 			afficherMessage("La radio est introuvable.");
-			return null;
 		}else {
 			listeRadios.get(pos).setMp3(1);
+			listerRadio();
 		}
-		
-		Radio radioTrouve = listeRadios.get(pos);
-		return radioTrouve;
+			}
+		}));
 	}
 	
 		
