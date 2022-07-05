@@ -9,7 +9,7 @@ public class GestionsVols {
 	static BufferedReader tmpVolRead;
 	static BufferedWriter tmpVolWrite;
 	static JTextArea output;
-	public final int MAX_PLACES = 340;
+	public final static int MAX_PLACES = 340;
 
 	public static void afficherMessage(String msg){
 		JOptionPane.showMessageDialog(null, msg, "MESSAGES", JOptionPane.PLAIN_MESSAGE);
@@ -46,7 +46,27 @@ public class GestionsVols {
 	}
 	
 	public static void insererVol() {
-		
+		int numVol = Integer
+				.parseInt(JOptionPane.showInputDialog(null, "Entrez le numéro du vol", "Saisie du numéro de vol", JOptionPane.PLAIN_MESSAGE));
+		tabVols.forEach((vol ->{
+		if(numVol == vol.getNumVol()) {
+			if(vol.getNbPassager() >= MAX_PLACES) {
+				output.append("Ce vol est malheureusement ");
+			}
+		}else {
+		String destination = JOptionPane.showInputDialog(null, "Entrez la destination", "Saisie de destination",JOptionPane.PLAIN_MESSAGE);
+		int jour = Integer
+				.parseInt(JOptionPane.showInputDialog(null, "Entrez le numéro du vol", "Saisie du jour de depart", JOptionPane.PLAIN_MESSAGE));
+		int mois = Integer
+				.parseInt(JOptionPane.showInputDialog(null, "Entrez le numéro du vol", "Saisie du mois de depart", JOptionPane.PLAIN_MESSAGE));
+		int annee = Integer
+				.parseInt(JOptionPane.showInputDialog(null, "Entrez le numéro du vol", "Saisie de l'année de depart", JOptionPane.PLAIN_MESSAGE));
+		int nbClient = Integer.parseInt(JOptionPane.showInputDialog(null, "Entrez le nombre de personnes pour qui vous reservez", "Saisie du nombre de clients", JOptionPane.PLAIN_MESSAGE));
+		int nbPassager = vol.getNbPassager() +nbClient;
+		Vol newVol = new Vol();
+		tabVols.ensureCapacity(tabVols.size() +1);
+		}
+		}));
 	}
 	
 	public static Vol rechercherVol(int numVol) {
