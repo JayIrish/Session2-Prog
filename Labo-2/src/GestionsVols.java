@@ -54,6 +54,15 @@ public class GestionsVols {
 		return tmpVol;
 	}
 	
+	/* 
+	I am trying to get 3 %s's(%1$s, %2$s, %3$s) where length of %1$s is equal to %3$s - %2$s. 
+	Inspired by: 
+	"System.out.printf("Hello, %s!", "reader");" found @ (https://stackabuse.com/how-to-format-a-string-in-java-with-examples/)
+	*/
+	public void formatLine() {
+		String line = tabVols.get(1).getDestination();
+	String.format("%1$s%2$s%3$s", "(MAX_SPACE - line.length)",line,"MAX_SPACE"); 
+	}
 	public static void main(String[] args) throws Exception {
 		chargerVols();
 		System.out.println(tabVols);
