@@ -1,6 +1,7 @@
 import java.io.*;
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 public class GestionsVols {
 	static final String FICHIER_CIEAIRRELAX = "src/donnees/Cie Air Relax.txt";
@@ -10,7 +11,9 @@ public class GestionsVols {
 	static JTextArea output;
 	public final int MAX_PLACES = 340;
 
-	
+	public static void afficherMessage(String msg){
+		JOptionPane.showMessageDialog(null, msg, "MESSAGES", JOptionPane.PLAIN_MESSAGE);
+	}
 
 	public static void chargerVols() throws Exception {
 		try {
@@ -47,9 +50,21 @@ public class GestionsVols {
 	}
 	
 	public static Vol rechercherVol(int numVol) {
-		tabVols.forEach(null);
 		Vol tmpVol = new Vol();
 		tmpVol.setNumVol(numVol);
+		tabVols.forEach( (vol) ->{
+			tmpVol.setNumVol(numVol);
+			if(tmpVol.getNumVol() == tmpVol.getNumVol()) {
+					int pos = tabVols.indexOf(vol);// -1 si pas trouv�
+					if (pos == -1){
+						afficherMessage("La radio est introuvable.");
+					}else {
+					//TODO
+				}
+			}
+		});
+		
+		
 		
 		return tmpVol;
 	}
