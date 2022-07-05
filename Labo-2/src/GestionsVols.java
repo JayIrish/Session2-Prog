@@ -65,6 +65,7 @@ public class GestionsVols {
 	}
 	public static void main(String[] args) throws Exception {
 		chargerVols();
+		rechercherVol(14567);
 		System.out.println(tabVols);
 
 	}
