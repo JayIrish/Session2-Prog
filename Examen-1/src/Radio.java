@@ -100,7 +100,7 @@ public class Radio {
 	
 	public boolean isSame(Object obj) {
 		Radio comparer = (Radio) obj;
-		if( this.make == comparer.make && this.model == comparer.model) {
+		if(this.make.equalsIgnoreCase(comparer.make)  && this.model.equalsIgnoreCase(comparer.model)) {
 			return true;
 		}else {
 			return false;
