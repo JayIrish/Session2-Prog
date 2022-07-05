@@ -1,4 +1,4 @@
-
+import java.text.DecimalFormat;
 
 public class Radio {
 	
@@ -108,7 +108,8 @@ public class Radio {
 	}
 	
 	public String toString() {
-		return this.make +"\t"+ this.model +"\t"+ hasCd()+ "      "+ hasCassette()+ "\t    " + hasMp3() +"\t"+ this.price + "\n";	}
+		DecimalFormat price = new DecimalFormat("0.00 $");
+		return this.make +"\t"+ this.model +"\t"+ hasCd()+ "      "+ hasCassette()+ "\t    " + hasMp3() +"\t"+ price.format(this.price)  + "\n";	}
 	
 }
 
