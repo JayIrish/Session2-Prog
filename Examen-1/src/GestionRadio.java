@@ -49,6 +49,10 @@ public class GestionRadio {
 		outputMarque.append("MARQUE\tMOD�LE\t CD   CASSETTE   MP3 \tPRIX\n");
 	}
 	
+	public static void afficherMessage(String msg){
+		JOptionPane.showMessageDialog(null, msg, "MESSAGES", JOptionPane.PLAIN_MESSAGE);
+	}
+	
 	// A)
 	public static void listerRadio() {
 		showHeader();
@@ -103,9 +107,6 @@ public class GestionRadio {
 	}
 	
 	// D)
-	public static void afficherMessage(String msg){
-		JOptionPane.showMessageDialog(null, msg, "MESSAGES", JOptionPane.PLAIN_MESSAGE);
-	}
 	
 	public static void ajouterRadio(){
 		String make = JOptionPane.showInputDialog(null, "Entrez la marque", "AJOUTER UNE RADIO", JOptionPane.PLAIN_MESSAGE);
