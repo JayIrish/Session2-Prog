@@ -46,8 +46,7 @@ public class GestionsVols {
 	}
 	
 	public static void insererVol() {
-		int numVol = Integer
-				.parseInt(JOptionPane.showInputDialog(null, "Entrez le numéro du vol", "Saisie du numéro de vol", JOptionPane.PLAIN_MESSAGE));
+		int numVol = Integer.parseInt(JOptionPane.showInputDialog(null, "Entrez le numï¿½ro du vol", "Saisie du numï¿½ro de vol", JOptionPane.PLAIN_MESSAGE));
 		tabVols.forEach((vol ->{
 		if(numVol == vol.getNumVol()) {
 			if(vol.getNbPassager() >= MAX_PLACES) {
@@ -56,12 +55,13 @@ public class GestionsVols {
 		}else {
 		String destination = JOptionPane.showInputDialog(null, "Entrez la destination", "Saisie de destination",JOptionPane.PLAIN_MESSAGE);
 		int jour = Integer
-				.parseInt(JOptionPane.showInputDialog(null, "Entrez le numéro du vol", "Saisie du jour de depart", JOptionPane.PLAIN_MESSAGE));
+				.parseInt(JOptionPane.showInputDialog(null, "Entrez le numï¿½ro du vol", "Saisie du jour de depart", JOptionPane.PLAIN_MESSAGE));
 		int mois = Integer
-				.parseInt(JOptionPane.showInputDialog(null, "Entrez le numéro du vol", "Saisie du mois de depart", JOptionPane.PLAIN_MESSAGE));
+				.parseInt(JOptionPane.showInputDialog(null, "Entrez le numï¿½ro du vol", "Saisie du mois de depart", JOptionPane.PLAIN_MESSAGE));
 		int annee = Integer
-				.parseInt(JOptionPane.showInputDialog(null, "Entrez le numéro du vol", "Saisie de l'année de depart", JOptionPane.PLAIN_MESSAGE));
-		int nbClient = Integer.parseInt(JOptionPane.showInputDialog(null, "Entrez le nombre de personnes pour qui vous reservez", "Saisie du nombre de clients", JOptionPane.PLAIN_MESSAGE));
+				.parseInt(JOptionPane.showInputDialog(null, "Entrez le numï¿½ro du vol", "Saisie de l'annï¿½e de depart", JOptionPane.PLAIN_MESSAGE));
+		int nbClient = Integer.
+				parseInt(JOptionPane.showInputDialog(null, "Entrez le nombre de personnes pour qui vous reservez", "Saisie du nombre de clients", JOptionPane.PLAIN_MESSAGE));
 		int nbPassager = vol.getNbPassager() +nbClient;
 		Vol newVol = new Vol();
 		tabVols.ensureCapacity(tabVols.size() +1);
@@ -74,10 +74,10 @@ public class GestionsVols {
 		tmpVol.setNumVol(numVol);
 		tabVols.forEach( (vol) ->{
 			tmpVol.setNumVol(numVol);
-			if(tmpVol.getNumVol() == tmpVol.getNumVol()) {
+			if(tmpVol.getNumVol() == vol.getNumVol()) {
 					int pos = tabVols.indexOf(vol);// -1 si pas trouvï¿½
 					if (pos == -1){
-						afficherMessage("La radio est introuvable.");
+						afficherMessage("Le vol est introuvable.");
 					}else {
 					//TODO
 				}
