@@ -15,7 +15,7 @@ public class GestionLivres {
 	
 
 	public static int menuGeneral() {
-		String contenu = "1-Lister\n2-Lister par numéro\n3-Rechercher un Livre par numéro\n4-Recherche par auteur\n5-Supprimer un livre\n6-Terminer\n\n";
+		String contenu = "1-Lister\n2-Lister par numï¿½ro\n3-Rechercher un Livre par numï¿½ro\n4-Recherche par auteur\n5-Supprimer un livre\n6-Terminer\n\n";
 		contenu += "Entrez votre choix parmis[1-6] : ";
 		return Integer
 				.parseInt(JOptionPane.showInputDialog(null, contenu, "MENU GESTION LIVRES", JOptionPane.PLAIN_MESSAGE));
@@ -25,7 +25,7 @@ public class GestionLivres {
 		sortieBrut = new JTextArea(20, 50);
 		sortieBrut.setFont(new Font("monospace", Font.PLAIN, 12));
 		sortieBrut.append("\t\tLISTE DES LIVRES\n\n");
-		sortieBrut.append("NUMÉRO\tTITRE\t\tAUTEUR\tANNEE\tPAGES\tCATÉGORIE\n");
+		sortieBrut.append("NUMï¿½RO\tTITRE\t\tAUTEUR\tANNEE\tPAGES\tCATï¿½GORIE\n");
 	}
 
 	public static void listerLivresList() {
@@ -37,7 +37,7 @@ public class GestionLivres {
 		JOptionPane.showMessageDialog(null, sortieBrut, null, JOptionPane.PLAIN_MESSAGE);
 	}
 	
-	public static void listerLivresListTrié() {
+	public static void listerLivresListTrie() {
 		afficherEntete();
 		//listeLivres.sort(null);
 		Collections.sort(listeLivres);
@@ -51,14 +51,14 @@ public class GestionLivres {
 
 	public static void enleverUnLivreList() {
 		int num = Integer
-				.parseInt(JOptionPane.showInputDialog(null, "Entrez le numéro", "ENLEVER UN LIVRE",
+				.parseInt(JOptionPane.showInputDialog(null, "Entrez le numï¿½ro", "ENLEVER UN LIVRE",
 						JOptionPane.PLAIN_MESSAGE));
 		listeLivres.removeIf((unLivre) -> unLivre.getNum() == num);
 	}
 
 	public static void listerLivresParNumero() {
 		int numero = Integer
-				.parseInt(JOptionPane.showInputDialog(null, "Entrez le numéro du livre recherché", "LISTER DES LIVRES PAR NUMÉRO",
+				.parseInt(JOptionPane.showInputDialog(null, "Entrez le numï¿½ro du livre recherchï¿½", "LISTER DES LIVRES PAR NUMï¿½RO",
 						JOptionPane.PLAIN_MESSAGE));
 		afficherEntete();
 		
@@ -74,7 +74,7 @@ public class GestionLivres {
 	
 	public static void listerLivresParAuteur() {
 		int auteur = Integer
-				.parseInt(JOptionPane.showInputDialog(null, "Entrez le numéro de l'auteur recherché", "LISTER DES LIVRES PAR AUTEUR",
+				.parseInt(JOptionPane.showInputDialog(null, "Entrez le numï¿½ro de l'auteur recherchï¿½", "LISTER DES LIVRES PAR AUTEUR",
 						JOptionPane.PLAIN_MESSAGE));
 		afficherEntete();
 		
@@ -128,7 +128,7 @@ public class GestionLivres {
 				});
 			}
 		} catch(Exception e){
-			System.out.println("Problème");
+			System.out.println("Problï¿½me");
 		}
 	}
 
@@ -147,7 +147,7 @@ public class GestionLivres {
 					//listerLivresMapTrie();
 					break;
 				case 2:
-					listerLivresListTrié();
+					listerLivresListTrie();
 					break;
 				case 3:
 					listerLivresParNumero();
@@ -160,7 +160,7 @@ public class GestionLivres {
 					break;
 				case 6:
 					Utilitaires.sauvegarderFichierObjets(listeLivres, FICHIER_LIVRES_OBJ);
-					afficherMessage("Merci d'avoir utilisé notre système");
+					afficherMessage("Merci d'avoir utilisï¿½ notre systï¿½me");
 					break;
 				default:
 					afficherMessage("Choix invalide. Les option sont [1-6] !");
