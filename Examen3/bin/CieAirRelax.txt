@@ -1,0 +1,4 @@
+R;14567;Toronto;12;04;2002;167;Boeing;340;long;economique;true;true;false
+B;17890;Guadeloupe;01;05;2002;340;Boeing;340;long;economique;false;true
+C;19012;Nouvelle Orl�ans;03;05;2002;250;Airbus;100;moyen;affaire;true;true
+P;22345;Martinique;25;04;2002;337;Jet;25;court;premiere;false;true;true;true
